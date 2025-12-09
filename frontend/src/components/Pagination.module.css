@@ -1,0 +1,135 @@
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.info {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.highlight {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    color: #374151;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+}
+
+.button:hover:not(:disabled) {
+    background: #f9fafb;
+    border-color: #6366f1;
+    color: #6366f1;
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.navButton {
+    font-weight: 600;
+}
+
+.pageNumbers {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.pageButton {
+    min-width: 36px;
+    height: 36px;
+    padding: 0.5rem;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    color: #374151;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+}
+
+.pageButton:hover:not(:disabled):not(.ellipsis) {
+    background: #f9fafb;
+    border-color: #6366f1;
+    color: #6366f1;
+}
+
+.pageButton.active {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    border-color: transparent;
+}
+
+.pageButton.ellipsis {
+    border: none;
+    cursor: default;
+    background: transparent;
+}
+
+.pageButton.ellipsis:hover {
+    background: transparent;
+    border: none;
+}
+
+.pageButton:disabled {
+    cursor: default;
+}
+
+@media (max-width: 768px) {
+    .pagination {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .info {
+        text-align: center;
+    }
+
+    .controls {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navButton {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .pageNumbers {
+        order: -1;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
